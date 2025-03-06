@@ -24,7 +24,7 @@ services:
     build:
       context: ./service3  
     ports:
-      - "5m000:5000" 
+      - "5000:5000" 
     environment:
       - NODE_ENV=production
     networks:
