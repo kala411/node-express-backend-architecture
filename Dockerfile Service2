@@ -1,7 +1,7 @@
 FROM node:18-alpine
 WORKDIR /app
-COPY service2/package*.json ./
-RUN npm install
-COPY service2/ .
-EXPOSE 3001
-CMD ["npm", "start"]
+COPY microservice2/package.json microservice2/package-lock.json ./
+RUN npm install --production
+COPY microservice2/ .
+EXPOSE 3002
+CMD ["node", "index.js"]
