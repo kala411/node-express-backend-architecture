@@ -1,39 +1,17 @@
-version: '3.9'
+version: '3'
 
 services:
-  service1:
-    build:
-      context: .
-      dockerfile: Dockerfile
-      args:
-        service_name: service1
-    ports:
-      - "3000:3000"
-    networks:
-      - my_network
-
-  service2:
-    build:
-      context: .
-      dockerfile: Dockerfile
-      args:
-        service_name: service2
+  microservice1:
+    build: ./microservice1
     ports:
       - "3001:3001"
-    networks:
-      - my_network
-
-  service3:
-    build:
-      context: .
-      dockerfile: Dockerfile
-      args:
-        service_name: service3
+    
+  microservice2:
+    build: ./microservice2
     ports:
       - "3002:3002"
-    networks:
-      - my_network
 
-networks:
-  my_network:
-    driver: bridge
+  microservice3:
+    build: ./microservice3
+    ports:
+      - "3003:3003"
