@@ -5,13 +5,29 @@ services:
     build: ./microservice1
     ports:
       - "3001:3001"
-    
+    environment:
+      - SERVICE_NAME=microservice1
+    networks:
+      - microservices-net
+  
   microservice2:
     build: ./microservice2
     ports:
       - "3002:3002"
+    environment:
+      - SERVICE_NAME=microservice2
+    networks:
+      - microservices-net
 
   microservice3:
     build: ./microservice3
     ports:
       - "3003:3003"
+    environment:
+      - SERVICE_NAME=microservice3
+    networks:
+      - microservices-net
+
+networks:
+  microservices-net:
+    driver: bridge
