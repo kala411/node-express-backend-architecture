@@ -1,7 +1,7 @@
 FROM node:18-alpine
 WORKDIR /app
-COPY package*.json ./
+COPY service3/package*.json ./
 RUN npm install
-COPY . .
-EXPOSE 5000
+COPY service3/ .
+EXPOSE 3002
 CMD ["npm", "start"]
