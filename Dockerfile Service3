@@ -1,7 +1,0 @@
-FROM node:18-alpine
-WORKDIR /app
-COPY microservice3/package.json microservice3/package-lock.json ./
-RUN npm install --production
-COPY microservice3/ .
-EXPOSE 3003
-CMD ["node", "index.js"]
